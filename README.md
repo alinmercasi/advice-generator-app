@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [View Solution](https://www.frontendmentor.io/solutions/flexbox-custom-properties-and-mobile-first-approach--zD8Vn7nIP)
+- Live Site URL: [Live Demo](https://alinmercasi.github.io/advice-generator-app/)
 
 ## My process
 
