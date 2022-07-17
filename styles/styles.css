@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&display=swap");
+
+:root {
+  --lightCyan: hsl(193, 38%, 86%);
+  --neonGreen: hsl(150, 100%, 66%);
+  --grayishBlue: hsl(217, 19%, 38%);
+  --darkGrayishBlue: hsl(217, 19%, 24%);
+  --darkBlue: hsl(218, 23%, 16%);
+  --font-size: 28px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin-inline: auto;
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+body {
+  --fs-xs: 0.4rem;
+  --fs-s: 0.8rem;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background: var(--darkBlue);
+  color: var(--lightCyan);
+  text-align: center;
+  line-height: 1.5;
+  font-size: var(--fs-s);
+}
+
+main {
+  width: min(95vw, 17.85rem);
+  background: var(--darkGrayishBlue);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem 1.25rem 2.375rem;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: var(--neonGreen);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.15rem;
+  margin-bottom: 1rem;
+}
+
+blockquote::before,
+blockquote::after {
+  content: '"';
+  hyphens: none;
+}
+
+.button-wrapper {
+  position: absolute;
+  bottom: 0;
+  align-self: center;
+  transform: translateY(50%);
+  border-radius: 50%;
+}
+
+button {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: inherit;
+  border: none;
+  background: var(--neonGreen);
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  font: inherit;
+  isolation: isolate;
+}
+
+/* I decided to create an after pseudo-element to create the glow on hover
+instead of animating box shadow. As I recently read and had some experiments
+animating box shadow isn't much performance friendly */
+button::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: var(--neonGreen);
+  z-index: -1;
+  border-radius: inherit;
+  filter: blur(0.5rem);
+  opacity: 0;
+  transition: opacity 0.125s linear;
+}
+
+button:focus::after {
+  opacity: 0.75;
+}
+
+@media (min-width: 375px) {
+  body {
+    --fs-xs: 0.5rem;
+    --fs-s: 1rem;
+  }
+}
+
+@media (hover) {
+  button:hover::after {
+    opacity: 0.75;
+  }
+}
