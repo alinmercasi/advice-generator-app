@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&display=swap');
 
 :root {
   --lightCyan: hsl(193, 38%, 86%);
@@ -29,7 +29,7 @@ html {
 body {
   --fs-xs: 0.4rem;
   --fs-s: 0.8rem;
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 800;
   min-height: 100vh;
   display: grid;
@@ -60,10 +60,18 @@ h1 {
   margin-bottom: 1rem;
 }
 
-blockquote::before,
+/* Reference https://css-tricks.com/almanac/properties/q/quotes/ */
+blockquote {
+  quotes: '“' '”';
+}
+
+blockquote::before {
+  content: open-quote;
+  margin-right: 0.05rem;
+}
 blockquote::after {
-  content: '"';
-  hyphens: none;
+  content: close-quote;
+  margin-left: 0.05rem;
 }
 
 .button-wrapper {
@@ -93,7 +101,7 @@ animating box shadow isn't much performance friendly */
 button::after {
   position: absolute;
   inset: 0;
-  content: "";
+  content: '';
   background: var(--neonGreen);
   z-index: -1;
   border-radius: inherit;
